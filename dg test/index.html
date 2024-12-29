@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center h-screen items-center">
+    <div class="bg-slate-900 w-6/12 h-60 rounded-2xl text-teal-400">
+        <div class="flex mt-10 text-3xl font-semibold gap-6 font-serif justify-center">
+            <h1 id="day">29</h1>
+            <h1 id="month">April</h1>
+            <h1 id="year">2029</h1>
+        </div>
+        <div class="flex gap-3 justify-center mt-5 text-6xl font-semibold">
+            <h1 id="hour">10</h1>
+            <h1 id="minutes">05</h1>
+            <h1 id="seconds">30</h1>
+            <h1 id="amPm">Am</h1>
+        </div>
+    </div>
+
+    <script>
+        let day = document.querySelector("#day")
+        let month = document.querySelector("#month")
+        let year = document.querySelector("#year")
+        let hour = document.querySelector("#hour")
+        let minutes = document.querySelector("#minutes")
+        let seconds = document.querySelector("#seconds")
+        let amPm = document.querySelector("#amPm")
+        let monthsName = ['January', 'February', 'March', 'April',
+            'May', 'June', 'July', 'August',
+            'September', 'October', 'November', 'December']
+
+        const clock = () => {
+            const dateTime = new Date()
+
+            day.innerHTML = dateTime.getDate()
+            month.innerHTML = monthsName[dateTime.getMonth()]
+            year.innerHTML = dateTime.getFullYear()
+
+            // time
+
+            if (dateTime.getHours() < 12) {
+                hour.innerHTML = `0${dateTime.getHours()} :`
+
+            } else {
+                hour.innerHTML = dateTime.getHours() + " :"
+            }
+
+            if (dateTime.getMinutes() < 12) {
+                minutes.innerHTML = `0${dateTime.getMinutes()}:`
+
+            } else {
+                minutes.innerHTML = dateTime.getMinutes() + " :"
+            }
+
+            seconds.innerHTML = dateTime.getSeconds()
+
+            dateTime.getHours() > 12 ? amPm.innerHTML = "PM" : amPm.innerHTML = "AM"
+
+
+        }
+
+
+        setInterval(clock)
+    </script>
+</body>
+
+</html>

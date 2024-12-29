@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <form class="bg-blue-500 w-[400px] p-10 ml-[600px] mt-[200px] rounded-2xl shadow-xl shadow-blue-400">
+        <p id="error" class="bg-red-200 py-2 w-[300px] rounded text-center hidden">Fill form</p>
+        <label class="text-xl">Enter Your Name</label> <br>
+        <input id="name" class="w-[300px] rounded p-2 outline-0 " type="text" placeholder="Enter your Name"> <br>
+        <label class="text-xl">Password</label> <br>
+        <input id="password" onkeyup="checkPasswordLength()" class="w-[300px] rounded  p-2 outline-0 " type="password" placeholder="Password"> <br>
+        <span id="passwordText"></span> <br>
+        <label class="text-xl">Confime Password</label> <br>
+        <input id="cpassword" class="w-[300px] rounded  p-2 outline-0 " type="password" placeholder="Confime Password">
+        <span id="passwordError"></span> <br>
+        <button id="btnRegister" class="bg-white text-black px-10 py-2 mt-10 rounded hover:bg-black hover:text-white">Register</button>
+    </form>
+
+
+    
+
+
+    <script src="main.js"></script>
+</body>
+</html>
